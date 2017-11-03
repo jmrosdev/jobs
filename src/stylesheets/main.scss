@@ -1,1 +1,23 @@
+// 1.- Settings – Se usa para las variables globales, elementos de configuración (Si usamos pre procesador, si no, podemos saltarnos esta capa)
+// 2.- Tools – Mixins y Funciones (solo si usamos preprocesadores)
+// 3.- Generic – Estilos CSS: reset, box-sizing, normalize.css…
+// 4.- Base – Elementos HTML sin clases, selectores.
+// 5.- Objects – Patrones de diseño, la estructura. Solo si usamos CSS dirigido a objetos (OOCSS)
+// 6.- Components – Carruseles, calendarios… y sets de UI… Aquí metemos nuestros estilos concretos, para una lista concreta de un producto, por ejemplo.
+// 7.- Trumps – Ayudas y lo que usamos para sobreescribir. La capa de los importants, la más específica de todas. Aquí habrá código muy concreto, para partes del DOM muy específicas.
+
+//SETTINGS
 @import "../libs/antd.min.css";
+@import "settings/variables";
+
+//TOOLS
+
+//GENERIC
+@import "generic/reset";
+
+//BASE
+
+//COMPONENTS
+@import "../components/Header/header"
+
+//TRUMPS

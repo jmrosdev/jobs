@@ -5,6 +5,7 @@ import createSagaMiddleware from "redux-saga";
 import freeze from "redux-freeze";
 import { reducers } from "./reducers/index";
 import { sagas } from "./sagas/index";
+import thunk from 'redux-thunk'
 
 // add the middlewares
 let middlewares = [];
@@ -15,6 +16,8 @@ middlewares.push(routerMiddleware(browserHistory));
 // add the saga middleware
 const sagaMiddleware = createSagaMiddleware();
 middlewares.push(sagaMiddleware);
+
+middleware.push([thunk]);
 
 // add the freeze dev middleware
 if (process.env.NODE_ENV !== 'production') {

@@ -21,17 +21,9 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.jsx$/,
-        loaders: 'babel',
+        test: /\.js[x]?$/,
         exclude: /node_modules/,
-        query: {
-            presets: ['es2015', 'react']
-        }
-      },
-      {
-        test: /\.js$/,
-        loaders: ['react-hot', 'babel'],
-        exclude: /node_modules/,
+        loader: 'babel-loader?presets[]=es2015&presets[]=react'
       },
       {
         // https://github.com/jtangelder/sass-loader
