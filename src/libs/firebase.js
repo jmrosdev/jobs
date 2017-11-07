@@ -10,5 +10,5 @@ export const init = () => {
     messagingSenderId: "824551680009"
   };
   firebase.initializeApp(config)
-  database = firebase.database()
+  database = firebase.database().ref('companies')
 }

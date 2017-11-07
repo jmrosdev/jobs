@@ -17,7 +17,7 @@ middlewares.push(routerMiddleware(browserHistory));
 const sagaMiddleware = createSagaMiddleware();
 middlewares.push(sagaMiddleware);
 
-middleware.push([thunk]);
+middlewares.push(thunk);
 
 // add the freeze dev middleware
 if (process.env.NODE_ENV !== 'production') {
