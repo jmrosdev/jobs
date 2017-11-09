@@ -1,14 +1,10 @@
-import React from "react";
+import React, {Component} from "react";
 import "../stylesheets/main.scss";
 
-import {init as firebaseInit} from '../libs/firebase';
-
-// app component
-export default class App extends React.Component {
+class App extends Component {
   
   constructor (props) {
     super(props);
-    
   }
 
   render() {
@@ -19,3 +15,5 @@ export default class App extends React.Component {
     );
   }
 }
+
+export default App;
