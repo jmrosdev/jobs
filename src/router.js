@@ -10,7 +10,7 @@ const router = (
   <Router onUpdate={() => window.scrollTo(0, 0)} history={history}>
     <Route path="/" component={App}>
       <IndexRoute component={Home}/>
-      <Route path="*" component={NotFound}/>
+      <Route path="/prueba" component={NotFound}/>
     </Route>
   </Router>
 );
