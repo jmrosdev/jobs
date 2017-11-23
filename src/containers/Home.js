@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Redirect, browserHistory } from 'react-router';
+import { Redirect } from 'react-router-dom';
 
 import Header from '../components/Header/Header.jsx';
 
@@ -19,14 +19,13 @@ class Home extends Component {
   }
 
   renderUser () {
-    this.props.loginUserGoogle();
     const {name,email,photo}  = this.props.user;
     if (!email) {
       return (
         <h1>User not logged </h1>
       );
     } else {
-      <Redirect to="/prueba" />
+      this.props.history.push('/prueba');
     }
   }
 
@@ -37,7 +36,7 @@ class Home extends Component {
       <div className="page-home">
         <Header />
           <button onClick={this.props.loginUserGoogle}>LOGIN GOOGLE</button>
-          {email ? this.props.router.push('/prueba') : <h1>User not logged</h1>}                     
+          {email ? <Redirect to='/prueba' /> : <h1>User not logged</h1>}                     
       </div>
     );
   }
@@ -47,10 +46,6 @@ const mapStateToProps = (state) => {
   return {
     user: state.userInfo
   }
-}
-
-Home.contextTypes = {
-  router: React.PropTypes.object.isRequired
 }
 
 export default connect(mapStateToProps, {fetchCompanies, loginUserGoogle})(Home);

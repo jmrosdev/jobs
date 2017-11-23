@@ -1,5 +1,5 @@
 import React from "react";
-import { Router, Route, IndexRoute } from "react-router";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { history } from "./store.js";
 import App from "./containers/App";
 import Home from "./containers/Home";
@@ -7,11 +7,11 @@ import NotFound from "./containers/NotFound";
 
 // build the router
 const router = (
-  <Router onUpdate={() => window.scrollTo(0, 0)} history={history}>
-    <Route path="/" component={App}>
-      <IndexRoute component={Home}/>
+  <Router history={history}>
+    <Switch>
+      <Route path="/" component={Home}/>
       <Route path="/prueba" component={NotFound}/>
-    </Route>
+    </Switch>
   </Router>
 );
 

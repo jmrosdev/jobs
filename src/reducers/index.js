@@ -6,8 +6,8 @@ import companies from './companies'
 import user from './user';
 
 export const reducers = combineReducers({
-  routing: routerReducer,
   form: formReducer,
   data: companies,
-  userInfo: user
+  userInfo: user,
+  routing: routerReducer
 });
