@@ -9,8 +9,9 @@ import NotFound from "./containers/NotFound";
 const router = (
   <Router history={history}>
     <Switch>
-      <Route path="/" component={Home}/>
-      <Route path="/prueba" component={NotFound}/>
+      <Route exact path="/" component={App}/>
+      <Route path="/prueba" component={Home}/>
+      <Route component={NotFound} />
     </Switch>
   </Router>
 );

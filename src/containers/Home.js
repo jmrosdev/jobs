@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { Redirect } from 'react-router-dom';
 
 import Header from '../components/Header/Header.jsx';
@@ -18,25 +17,12 @@ class Home extends Component {
     this.props.fetchCompanies();
   }
 
-  renderUser () {
-    const {name,email,photo}  = this.props.user;
-    if (!email) {
-      return (
-        <h1>User not logged </h1>
-      );
-    } else {
-      this.props.history.push('/prueba');
-    }
-  }
-
   render() {
     const {name,email,photo}  = this.props.user;
     
     return (
       <div className="page-home">
-        <Header />
-          <button onClick={this.props.loginUserGoogle}>LOGIN GOOGLE</button>
-          {email ? <Redirect to='/prueba' /> : <h1>User not logged</h1>}                     
+          {!email ? <h1>User not logged</h1> : <h1>Logged {name}</h1>}                     
       </div>
     );
   }
@@ -48,4 +34,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {fetchCompanies, loginUserGoogle})(Home);
+export default connect(mapStateToProps, {fetchCompanies})(Home);
